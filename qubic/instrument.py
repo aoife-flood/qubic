@@ -29,6 +29,7 @@ from qubic.utils import _compress_mask
 from qubic.ripples import ConvolutionRippledGaussianOperator, BeamGaussianRippled
 from qubic.beams import (BeamGaussian, BeamFitted, MultiFreqBeam)
 from qubic.polyacquisition import compute_freq
+from astropy.io import fits
 
 __all__ = ['QubicInstrument',
            'QubicMultibandInstrument']
