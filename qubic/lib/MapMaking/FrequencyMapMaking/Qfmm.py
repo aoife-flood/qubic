@@ -121,10 +121,10 @@ class PipelineFrequencyMapMaking:
         )
 
         ### Joint acquisition
-        if self.params["QUBIC"]["nsub_in"] == self.params["QUBIC"]["nsub_out"]:
-            H = self.joint_tod.qubic.H
-        else:
-            H = None
+        #if self.params["QUBIC"]["nsub_in"] == self.params["QUBIC"]["nsub_out"]:
+        #    H = self.joint_tod.qubic.H
+        #else:
+        H = None
 
         self.joint = JointAcquisitionFrequencyMapMaking(
             self.dict_out,
@@ -384,6 +384,8 @@ class PipelineFrequencyMapMaking:
             "detector_nep": float(self.params["QUBIC"]["NOISE"]["detector_nep"]),
             "synthbeam_kmax": self.params["QUBIC"]["SYNTHBEAM"]["synthbeam_kmax"],
             "synthbeam_fraction": self.params["QUBIC"]["SYNTHBEAM"]["synthbeam_fraction"],
+            "synthbeam": self.params["QUBIC"]["SYNTHBEAM"][f"synthbeam_{key}"],
+            "use_synthbeam_fits_file": self.params["QUBIC"]["SYNTHBEAM"]["use_synthbeam_fits_file"],
             "interp_projection": self.params["QUBIC"]["interp"],
             "instrument_type": self.params["QUBIC"]["instrument"],
             "config": self.params["QUBIC"]["configuration"],
